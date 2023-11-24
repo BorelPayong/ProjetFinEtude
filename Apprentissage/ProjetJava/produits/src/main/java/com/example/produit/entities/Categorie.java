@@ -11,7 +11,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//lomnok est une bibliotheque java
+//lomnok est une bibliotheque java ; la dependency a ete ajouter au pom.xml pour pouvoir l'utiliser 
 @Data //grace a lombok, permet de genere automatique les getter et setter sans les écrires 
 @NoArgsConstructor //pour genere un consructeur sans parametre
 @AllArgsConstructor 

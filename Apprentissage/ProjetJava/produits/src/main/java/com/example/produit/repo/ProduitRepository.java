@@ -5,11 +5,14 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.example.produit.entities.Categorie;
 import com.example.produit.entities.Produit;
 
 //la classe Produit, Long c'est le type de son id
+/*@RepositoryRestResource(path = "rest") : path = "rest" pour l'url specifier le chemin  ; la dependency a ete ajouter au pom.xml pour pouvoir l'utiliser */ 
+@RepositoryRestResource(path = "rest")
 public interface ProduitRepository extends JpaRepository<Produit, Long> {
 
 	//requette jpa de srping
