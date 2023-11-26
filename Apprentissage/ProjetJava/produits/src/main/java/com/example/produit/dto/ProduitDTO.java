@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data 
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder //utiliser le design patern pour construire des objet
+@Builder //genere automatiquement un constructeur de type builder
 public class ProduitDTO {
 	
 	private Long idProduit;
@@ -23,3 +23,13 @@ public class ProduitDTO {
 	private String nomCat;
 
 }
+/*
+@Builder
+ProduitDTO produitDTO = ProduitDTO.builder()
+.idProduit()
+.nomProduit()
+.prixProduit()
+.dateCreation()
+.categorie(new Categorie())
+.nomCat()
+.build();*/
