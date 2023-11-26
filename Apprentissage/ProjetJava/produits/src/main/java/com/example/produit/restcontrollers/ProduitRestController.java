@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.produit.dto.ProduitDTO;
 import com.example.produit.entities.Produit;
 import com.example.produit.service.ProduitService;
 
@@ -23,7 +24,7 @@ public class ProduitRestController {
 	
 	//method=RequestMethod.GET preciser quel methode http sera utilise ; dans ce cas il s'agit d'une methode get
 	@RequestMapping(method=RequestMethod.GET)
-	public List<Produit> getAllProduits(){
+	public List<ProduitDTO> getAllProduits(){
 		return produitService.getAllProduits();
 	}
 	
@@ -36,13 +37,13 @@ public class ProduitRestController {
 	
 	//@RequestBody recupere un objet de type produit qui sera sauvegarde dans la base de donnee
 	@RequestMapping(method = RequestMethod.POST)
-	public Produit createProduit(@RequestBody Produit produit) {
-		return produitService.saveProduit(produit);
+	public ProduitDTO createProduit(@RequestBody ProduitDTO produitDTO) {
+		return produitService.saveProduit(produitDTO);
 	}
 	
 	@RequestMapping(method = RequestMethod.PUT)
-	public Produit updateProduit(@RequestBody Produit produit) {
-		return produitService.updateProduit(produit);
+	public ProduitDTO updateProduit(@RequestBody ProduitDTO produitDTO) {
+		return produitService.updateProduit(produitDTO);
 	}
 	
 	@RequestMapping(value="/{id}",method = RequestMethod.DELETE)
