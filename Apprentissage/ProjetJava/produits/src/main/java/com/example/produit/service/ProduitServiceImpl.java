@@ -144,13 +144,14 @@ public class ProduitServiceImpl implements ProduitService {
 				.idProduit(p.getIdProduit())
 				.nomProduit(p.getNomProduit())
 				.prixProduit(p.getPrixProduit())
-				.categorie(p.getCategorie())
-				//.nomCat(p.getCategorie().getNomCat())
+				//.categorie(p.getCategorie())
+				.nomCat(p.getCategorie().getNomCat())
 				.dateCreation(p.getDateCreation())
 				.build();*/
 		
 		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
 		ProduitDTO produitDto =  modelMapper.map(produit, ProduitDTO.class);
+		//produitDto.setNomCat(produit.getCategorie().getNomCat());
 		return produitDto;
 	}
 

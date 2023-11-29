@@ -19,7 +19,7 @@ public class ProduitDTO {
 	private String nomProduit;
 	private Double prixProduit;
 	private Date dateCreation;
-	private Categorie categorie;
+	//private Categorie categorie;
 	private String nomCat;
 
 }
