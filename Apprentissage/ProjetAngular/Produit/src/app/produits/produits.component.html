@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Liste de Produits</th>
+                    </tr>
+                </thead>
+                <!--ngFor : directive predefini angular qui permet de faire la boucle for-->
+                <tbody *ngFor="let produit of produits">
+                    <tr>
+                        <td>{{produit}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

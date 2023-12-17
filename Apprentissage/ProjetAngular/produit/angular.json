@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "839f3a94-3c3a-40b4-854e-83b6668d99d2"
+    "analytics": "7fe3df9e-4d2f-4456-932b-f9d072984f93"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "produit": {
+    "Produit": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -30,9 +30,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -71,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "produit:build:production"
+              "browserTarget": "Produit:build:production"
             },
             "development": {
-              "browserTarget": "produit:build:development"
+              "browserTarget": "Produit:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "produit:build"
+            "browserTarget": "Produit:build"
           }
         },
         "test": {
@@ -105,5 +109,5 @@
       }
     }
   },
-  "defaultProject": "produit"
+  "defaultProject": "Produit"
 }
