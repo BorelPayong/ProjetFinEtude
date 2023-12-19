@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core'; //utilise pour definir les module angu
 import { RouterModule, Routes } from '@angular/router'; //pour la configuration des route du projet
 import { ProduitsComponent } from './produits/produits.component'; //import le component ProduitsComponent
 import { AddProduitComponent } from './add-produit/add-produit.component'; //import le component AddProduitComponent
+import { UpdateProduitComponent } from './update-produit/update-produit.component';
 
 const routes: Routes = [ //declare un tableau de route
   {path : "produits", component : ProduitsComponent}, //http://localhost:4200/produits pour charge le component ProduitsComponent
   {path : "add-produits", component : AddProduitComponent},
+  {path : "updateProduit/:id", component : UpdateProduitComponent},
   {path: "", redirectTo: "produits", pathMatch: "full"} //path: "" : http://localhost:4200 vas toujours renvoyer vers le component ProduitsComponent ie URL vide
   //pathMatch: "full" : pour specifier que c'est uniquement quand lorsque l'URL sera vide que la redirection sera possible
-];
+]; 
 
 @NgModule({ //les configuration du module angular 
   imports: [RouterModule.forRoot(routes)], //configurer le module de routage avec les routes defini plus haut

@@ -16,6 +16,9 @@
                         <td>{{produit.prixProduit}}</td>
                         <!--date:'dd/MM/yyyy' definir le format de la date-->
                         <td>{{produit.dateCreation | date:'dd/MM/yyyy'}}</td>
+                        <td><a class="btn btn-danger" (click)="supprimerProduit(produit)">Supprimer</a></td>
+                        <!--[routerLink] : pour faire la route vers une autre page ; ici il sera direge vers updateProduit avec comme parem produit.idProduit qui est l'id du produit-->
+                        <td><a class="btn btn-success" [routerLink]="['/updateProduit',produit.idProduit]">Modifier</a></td>
                     </tr>
                 </tbody>
             </table>

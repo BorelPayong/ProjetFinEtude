@@ -16,4 +16,10 @@ export class ProduitsComponent implements OnInit { //export pour être utilise p
     this.produits = this.produitService.listeProduit()
   }
 
+  supprimerProduit(prod : Produit){
+    let confir = confirm("Etes-vous sur ?") //confirm est une boite de dialogue js si la reponse st oui la suppresion sera faite
+    if(confir)
+      this.produitService.supprimerProduit(prod)
+  }
+
 }

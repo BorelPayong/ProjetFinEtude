@@ -5,13 +5,15 @@ import { AppRoutingModule } from './app-routing.module'; //module de routage
 import { AppComponent } from './app.component'; // Importe le composant principal
 import { ProduitsComponent } from './produits/produits.component'; //importe les different component
 import { AddProduitComponent } from './add-produit/add-produit.component';
-import { FormsModule } from '@angular/forms'; //module pour gere les formulaire
+import { FormsModule } from '@angular/forms';
+import { UpdateProduitComponent } from './update-produit/update-produit.component'; //module pour gere les formulaire
 
 @NgModule({ //NgModule module principal de l'application avec ces configuration
   declarations: [ //declaration de la liste des component de l'application
     AppComponent,
     ProduitsComponent,
-    AddProduitComponent
+    AddProduitComponent,
+    UpdateProduitComponent
   ],
   imports: [ //la liste des module dont depend ce module
     BrowserModule,
