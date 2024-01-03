@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Produit } from '../model/produit.model';
+import { Categorie } from '../model/categorie.model';
 
 @Injectable({ //Injectable cette classe peut être injecter dans d'autre component/class
   providedIn: 'root'
@@ -7,17 +8,25 @@ import { Produit } from '../model/produit.model';
 export class ProduitService {
 
   produits: Produit[] //un tableau de Produit
+  categories: Categorie[]
 
   constructor() {
+
+    this.categories = [
+      { idCat: 1, nomCat: "PC" },
+      { idCat: 2, nomCat: "Imprimante" },
+      { idCat: 3, nomCat: "Tablette" }
+    ]
+
     this.produits = [
       {
-        idProduit: 1, nomProduit: "PC Acer", prixProduit: 3000.600, dateCreation: new Date("01/14/2011")
+        idProduit: 1, nomProduit: "PC Acer", prixProduit: 3000.600, dateCreation: new Date("01/14/2011"), categorie: { idCat: 1, nomCat: "PC" }
       },
       {
-        idProduit: 2, nomProduit: "Imprimante Epson", prixProduit: 450, dateCreation: new Date("12/17/2010")
+        idProduit: 2, nomProduit: "Imprimante Epson", prixProduit: 450, dateCreation: new Date("12/17/2010"), categorie: { idCat: 2, nomCat: "Imprimante" }
       },
       {
-        idProduit: 3, nomProduit: "Tablette Samsung", prixProduit: 900.123, dateCreation: new Date("02/20/2020")
+        idProduit: 3, nomProduit: "Tablette Samsung", prixProduit: 900.123, dateCreation: new Date("02/20/2020"), categorie: { idCat: 3, nomCat: "Tablette" }
       }
     ];
   }
@@ -50,12 +59,12 @@ export class ProduitService {
   }
 
   updateProduit(p: Produit) {
-    console.log(p);
-    this.supprimerProduit(p);
-    this.ajouterProduit(p);
-    console.log(p);
+    this.supprimerProduit(p)
+    this.ajouterProduit(p)
+    this.trierProduits()
   }
 
+  //a comprendre ??????? car copie collé
   trierProduits() {
     this.produits = this.produits.sort((n1, n2) => {
       if (n1.idProduit! > n2.idProduit!) {
@@ -68,4 +77,11 @@ export class ProduitService {
     });
   }
 
+  listeCategories(): Categorie[] {
+    return this.categories;
+  }
+
+  consulterCategorie(id: number): Categorie {
+    return this.categories.find(cat => cat.idCat == id)!;
+  }
 }

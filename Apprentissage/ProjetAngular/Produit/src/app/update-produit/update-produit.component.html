@@ -21,7 +21,17 @@
             <!--[ngModel] : recupere et affiche la valeur, mais ne permet par la modification de cette valeur-->
             <!--(ngModelChange) evenement angular qui detecte le changement d'une valeur et effectue la modification ensuite--->
             <!--(ngModelChange)=" currentProduit.dateCreation= $event" : vas ecoute le changement effectue et mettre a jour la date--->
-            <input type="date" [ngModel]="currentProduit.dateCreation | date: 'yyyy-MM-dd'" (ngModelChange)=" currentProduit.dateCreation= $event" name="dateCreation" class="form-control">
+            <!--currentProduit.dateCreation | date: yyyy-MM-dd : je recupere currentProduit.dateCreation ensuite je pipe (|) au format date ie je convertie au yyyy-MM-dd-->
+            <input type="date" [ngModel]="currentProduit.dateCreation | date: 'yyyy-MM-dd'"
+                (ngModelChange)=" currentProduit.dateCreation= $event" name="dateCreation" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Categorie</label>
+            <select class="form-control form-control-lg" id="idCat" name="idCat" [(ngModel)]="updatedCatId">
+                <option *ngFor="let cat of categories" [value]="cat.idCat">
+                    {{cat.nomCat}}
+                </option>
+            </select>
         </div>
         <div class="mt-2">
             <button type="submit" (click)="updateProduit()" class="btn btn-success">Modifer</button>
